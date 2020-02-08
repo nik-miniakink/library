@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+  <h1>Подробная информация об авторе: </h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h2>{{ author.first_name }} {{author.last_name }}</h2>
+                <img src={{ author.image.url }} class="img-fluid">
+            </div>
+            <div class="col-9">
+                <div class="row" >
+                    <di
+                <h2>{{ author.summary_author}}</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+  <p><strong>Date of_birth:</strong> {{ author.date_of_birth }}</p>
+  <p><strong>Date of_death:</strong> {{ author.date_of_death }}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+
+</div>
+    {% for book in author.book_set.all %}
+        <p>{<p><strong>Книги:</strong> <a href="{% url 'book-detail' book.pk %}">{{ book }}</a></p> </p>
+    {% endfor %}
+
+
+
+{% endblock %}

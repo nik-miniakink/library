@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Домашняя библиотека</h1>
+
+  <p>Добро пожаловать на сервис по обмену книгами <em>"Домашняя библиотека"</em></p>
+  <p>Здесь вы можете читать легальные экземляры книг онлайн</p>
+
+<h2>Динамический контент</h2>
+
+  <p>Сейчас в наличии:</p>
+  <ul>
+    <li><strong>Книг:</strong> {{ num_books }}</li>
+    <li><strong>Экземляров книг:</strong> {{ num_instances }}</li>
+    <li><strong>Доступно экземпляров:</strong> {{ num_instances_available }}</li>
+    <li><strong>Авторов:</strong> {{ num_authors }}</li>
+    <li><strong>Жанров {{ num_genre }}</strong></li>
+    <li><strong>Всего книг автора ХОЙ {{ book_hoi }}</strong></li>
+  </ul>
+
+{% endblock %}
